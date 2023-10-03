@@ -35,9 +35,11 @@ jobs:
       - name: Setup pyenv (python ${{ matrix.python-version }})
         run: |
           git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+          export PYENV_ROOT="$HOME/.pyenv
+          export PATH="$PYENV_ROOT/bin:$PATH"
+          PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install ${{ matrix.python-version }}
           echo "PYENV_ROOT="$HOME/.pyenv" >> $GITHUB_ENV
           echo "PATH="$PYENV_ROOT/bin:$PATH" >> $GITHUB_ENV
-          PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install ${{ matrix.python-version }}
           echo "PYTHON=$(PYENV_VERSION=${{ matrix.python-version }} pyenv which python) >> $GITHUB_ENV
 
       - name: Run test
