@@ -6,7 +6,7 @@ jobs:
   test-medaka:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
         python-version: [ '3.8', '3.9', '3.10' ]
         tensorflow-version: [ '2.8', '2.9', '2.10', '2.11' ]
 
