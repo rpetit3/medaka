@@ -15,6 +15,9 @@ jobs:
     name: Run Tests (py ${{ matrix.python-version }}, tf ${{ matrix.tensorflow-version }})
     steps:
       - uses: actions/checkout@v3
+        with:
+          lfs: 'true'
+          submodules: 'recursive'
 
       - name: Install Dependencies
         run: |
