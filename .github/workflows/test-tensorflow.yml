@@ -29,7 +29,7 @@ jobs:
             libssl-dev libffi-dev valgrind \
             libreadline8 libreadline-dev sqlite3 libsqlite3-dev
 
-      - name: Add tf ${{ matrix.tensorflow-version }} to requirements-test.txt
+      - name: Add tf ${{ matrix.tensorflow-version }} to requirements.txt
         run: |
           mv requirements.txt requirements-orig.txt
           grep -v tensorflow requirements-orig.txt > requirements.txt
