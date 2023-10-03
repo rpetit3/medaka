@@ -31,7 +31,7 @@ jobs:
       - name: Add tf ${{ matrix.tensorflow-version }} to requirements-test.txt
         run: |
           mv requirements.txt requirements-orig.txt
-          echo "tensorflow~=${{ matrix.tensorflow-version }})" >> requirements-test.txt
+          echo "tensorflow~=${{ matrix.tensorflow-version }}" >> requirements-test.txt
           cp requirements-test.txt requirements.txt
           cat requirements.txt
 
